@@ -1,0 +1,113 @@
+.button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* Contained Variant */
+.contained {
+  border: none;
+}
+
+.contained.primary {
+  background: #4dabf7;
+  color: white;
+}
+
+.contained.primary:hover:not(:disabled) {
+  background: #339af0;
+}
+
+.contained.error {
+  background: #ff6b6b;
+  color: white;
+}
+
+.contained.error:hover:not(:disabled) {
+  background: #fa5252;
+}
+
+/* Outlined Variant */
+.outlined {
+  background: transparent;
+  border: 2px solid;
+}
+
+.outlined.primary {
+  border-color: #4dabf7;
+  color: #4dabf7;
+}
+
+.outlined.primary:hover:not(:disabled) {
+  background: rgba(77, 171, 247, 0.1);
+}
+
+.outlined.error {
+  border-color: #ff6b6b;
+  color: #ff6b6b;
+}
+
+.outlined.error:hover:not(:disabled) {
+  background: rgba(255, 107, 107, 0.1);
+}
+
+/* Disabled States */
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  position: relative;
+}
+
+/* Contained Variant Disabled */
+.contained.primary:disabled {
+  background: #a5d8ff;
+  color: #f8f9fa;
+}
+
+.contained.error:disabled {
+  background: #ffc9c9;
+  color: #f8f9fa;
+}
+
+/* Outlined Variant Disabled */
+.outlined.primary:disabled {
+  border-color: #a5d8ff;
+  color: #a5d8ff;
+  background: transparent;
+}
+
+.outlined.error:disabled {
+  border-color: #ffc9c9;
+  color: #ffc9c9;
+  background: transparent;
+}
+
+/* Hover effect removal for disabled state */
+.button:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Optional: Add a not-allowed cursor indicator */
+.button:disabled::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  cursor: not-allowed;
+}
