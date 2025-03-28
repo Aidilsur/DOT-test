@@ -65,21 +65,6 @@
   color: #adb5bd;
 }
 
-.inputContainer button {
-  padding: 0.75rem 1.5rem;
-  background: #4dabf7;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.inputContainer button:hover {
-  background: #339af0;
-}
-
 /* task list */
 .taskList {
   margin-top: 2rem;
@@ -115,19 +100,4 @@
 .completed {
   text-decoration: line-through;
   color: #adb5bd !important;
-}
-
-.taskItem button {
-  padding: 0.5rem 1rem;
-  background: #ff6b6b;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.taskItem button:hover {
-  background: #fa5252;
 }

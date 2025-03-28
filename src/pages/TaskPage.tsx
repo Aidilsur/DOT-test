@@ -63,7 +63,7 @@ const TaskPage = () => {
           className={error ? Style.inputError : ""}
         />
         {error && <div className={Style.errorMessage}>{error}</div>}
-        <Button variant="outlined" color="primary" onClick={addTask}>
+        <Button variant="contained" color="primary" onClick={addTask}>
           Tambah
         </Button>
       </div>

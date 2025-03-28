@@ -32,7 +32,7 @@ const Login = () => {
       const token = btoa(`${user.email}:${Date.now()}`);
       dispatch(loginSuccess({ user, token }));
       showToast("success", "Login successful!");
-      navigate("/products");
+      navigate("/");
     } else {
       showToast("error", "Invalid credentials");
     }
