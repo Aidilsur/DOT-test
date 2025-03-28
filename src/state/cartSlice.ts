@@ -22,9 +22,16 @@ const cartSlice = createSlice({
         (item) => item.id === action.payload.id
       );
       if (existingItem) {
-        existingItem.quantity += 1;
+        existingItem.quantity =
+          (existingItem.quantity || 0) + (action.payload.quantity || 1);
+        if (existingItem.quantity > existingItem.stock) {
+          existingItem.quantity = existingItem.stock;
+        }
       } else {
-        state.items.push({ ...action.payload, quantity: 1 });
+        state.items.push({
+          ...action.payload,
+          quantity: action.payload.quantity || 1,
+        });
       }
     },
     removeFromCart: (state, action: PayloadAction<number>) => {
@@ -37,6 +44,9 @@ const cartSlice = createSlice({
       const item = state.items.find((item) => item.id === action.payload.id);
       if (item) {
         item.quantity = action.payload.quantity;
+        if (item.quantity > item.stock) {
+          item.quantity = item.stock;
+        }
       }
     },
   },

@@ -1,15 +1,18 @@
 import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Style from "./style.module.css";
+import ProtectedRoute from "../../components/ProtectedRoute";
 
 const DashboardLayout = () => {
   return (
-    <div className={Style.dashboardWrapper}>
-      <Sidebar />
-      <div className={Style.content}>
-        <Outlet />
+    <ProtectedRoute>
+      <div className={Style.dashboardWrapper}>
+        <Sidebar />
+        <div className={Style.content}>
+          <Outlet />
+        </div>
       </div>
-    </div>
+    </ProtectedRoute>
   );
 };
 

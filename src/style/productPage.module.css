@@ -90,26 +90,10 @@
   border-radius: 999px;
 }
 
-/* Button Styles */
-.productItem button {
-  width: 100%;
-  padding: 0.75rem;
-  border: none;
-  border-radius: 6px;
-  background: #4299e1;
-  color: white;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.productItem button:hover:not(:disabled) {
-  background: #3182ce;
-}
-
-.productItem button:disabled {
-  background: #cbd5e0;
-  cursor: not-allowed;
+.buttonGroup {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
 
 /* Responsive Design */

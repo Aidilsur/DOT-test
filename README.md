@@ -1,54 +1,61 @@
-# React + TypeScript + Vite
+# Task Management & Product Page App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Deskripsi
 
-Currently, two official plugins are available:
+Aplikasi ini mencakup dua fitur utama:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Task Management – Mengelola daftar tugas dengan fitur tambah, hapus, dan tandai selesai.
+2. Product Page – Menampilkan daftar produk, detail produk, dan fitur keranjang belanja menggunakan Redux dengan penyimpanan di local storage.
 
-## Expanding the ESLint configuration
+# Teknologi yang Digunakan
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React.js + TypeScript
+- Redux Toolkit (untuk state management cart)
+- React Router DOM (untuk navigasi)
+- CSS Modules (untuk styling)
+- Local Storage (untuk menyimpan data cart secara permanen)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+# Cara Menjalankan Proyek
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. Clone repository ini
+   git clone https://github.com/Aidilsur/DOT-test.git
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2. Instal dependensi
+   npm install
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+3. Jalankan aplikasi
+   npm run dev
+
+# Fitur Utama
+
+- Task Management
+
+1. Tambah tugas baru
+2. Hapus tugas
+3. Tandai tugas sebagai selesai
+4. Filter tugas berdasarkan status (selesai/belum selesai)
+
+- Product Page & Cart
+
+1. Menampilkan daftar produk dari data dummy
+2. Menambahkan produk ke keranjang
+3. Menyimpan data keranjang di local storage
+4. Menghapus produk dari keranjang
+5. Halaman detail produk
+
+# Autentikasi
+
+Halaman Login tersedia untuk simulasi autentikasi
+Routing dilindungi untuk halaman yang memerlukan login
+
+# Dummy User 1
+
+Email: admin@example.com
+Password: password123
+
+# Dummy User 2
+
+Email: user@example.com
+Password: password123
+
+# Developed by Aidil Surya

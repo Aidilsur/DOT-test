@@ -9,8 +9,14 @@ import { ToastContainer } from "react-toastify";
 // style
 import "react-toastify/dist/ReactToastify.css";
 
+// auth page
+const LoginPage = lazy(() => import("./pages/Login"));
+
+// Dashboard page
+
 const DashboardLayout = lazy(() => import("./Layout/Dashboard"));
 const ProductPage = lazy(() => import("./pages/Product"));
+const DetailProductPage = lazy(() => import("./pages/ProductDetail"));
 const ChartPage = lazy(() => import("./pages/Cart"));
 
 const router = createBrowserRouter([
@@ -20,8 +26,13 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <TaskPage /> },
       { path: "/products", element: <ProductPage /> },
+      { path: "/products/:id", element: <DetailProductPage /> },
       { path: "/cart", element: <ChartPage /> },
     ],
+  },
+  {
+    path: "/login",
+    element: <LoginPage />,
   },
 ]);
 

@@ -7,6 +7,9 @@ import {
 } from "react-icons/fa";
 import Style from "./style.module.css";
 import { Link, useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../state/authSlice";
+import { RootState } from "../../state/store";
 
 const menuItems = [
   {
@@ -28,6 +31,12 @@ const menuItems = [
 
 const Sidebar = () => {
   const location = useLocation();
+  const dispatch = useDispatch();
+  const { user } = useSelector((state: RootState) => state.auth);
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
 
   return (
     <div className={Style.sidebar}>
@@ -55,9 +64,9 @@ const Sidebar = () => {
           <div className={Style.profileImage}>
             <FaUser />
           </div>
-          <span>John Doe</span>
+          <span>{user?.name}</span>
         </div>
-        <button className={Style.logoutBtn}>
+        <button className={Style.logoutBtn} onClick={handleLogout}>
           <FaSignOutAlt className={Style.icon} />
           <span>Logout</span>
         </button>

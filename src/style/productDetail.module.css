@@ -1,0 +1,110 @@
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #4a5568;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.backButton:hover {
+  color: #2d3748;
+}
+
+.productDetail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.imageSection {
+  padding: 2rem;
+}
+
+.imageSection img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.infoSection {
+  padding: 2rem;
+}
+
+.infoSection h1 {
+  font-size: 2rem;
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.price {
+  font-size: 1.5rem;
+  color: #4dabf7;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.stock {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #f7fafc;
+  border-radius: 999px;
+  color: #4a5568;
+  font-size: 0.875rem;
+  margin-bottom: 2rem;
+}
+
+.description {
+  margin-bottom: 2rem;
+}
+
+.description h3 {
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.description p {
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.quantity {
+  width: 150px;
+}
+
+@media (max-width: 768px) {
+  .productDetail {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .imageSection {
+    padding: 1rem;
+  }
+
+  .infoSection {
+    padding: 1rem;
+  }
+}

@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Product } from "../../data/dummyProduct";
 import Style from "../../Style/productPage.module.css";
 import { showToast } from "../../utils/toast";
@@ -9,6 +10,7 @@ interface ProductListProps {
 }
 
 const ProductList = ({ products, addToCart }: ProductListProps) => {
+  const navigate = useNavigate();
   const handleAddToCart = (product: Product) => {
     addToCart(product.id);
     showToast("success", `${product.name} ditambahkan ke keranjang!`);
@@ -31,12 +33,23 @@ const ProductList = ({ products, addToCart }: ProductListProps) => {
               </span>
               <span className={Style.stock}>Stock: {product.stock}</span>
             </div>
-            <Button
-              onClick={() => handleAddToCart(product)}
-              disabled={product.stock === 0}
-            >
-              {product.stock === 0 ? "Stok Habis" : "Tambahkan ke Keranjang"}
-            </Button>
+            <div className={Style.buttonGroup}>
+              <Button
+                variant="outlined"
+                color="primary"
+                onClick={() => navigate(`/products/${product.id}`)}
+              >
+                Detail
+              </Button>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() => handleAddToCart(product)}
+                disabled={product.stock === 0}
+              >
+                {product.stock === 0 ? "Stok Habis" : "Tambah ke Keranjang"}
+              </Button>
+            </div>
           </div>
         </div>
       ))}
