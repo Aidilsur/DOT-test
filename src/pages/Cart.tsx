@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../state/store";
 import { showToast } from "../utils/toast";
-import Style from "../Style/cartPage.module.css";
+import Style from "../style/cartPage.module.css";
 import { Link } from "react-router-dom";
 import { FaTrash, FaArrowLeft } from "react-icons/fa";
 import { CartItem, removeFromCart, updateQuantity } from "../state/cartSlice";
