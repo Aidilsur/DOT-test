@@ -40,7 +40,13 @@ const ProductDetail = () => {
 
       <div className={Style.productDetail}>
         <div className={Style.imageSection}>
-          <img src={product.image} alt={product.name} />
+          <img
+            src={product.image}
+            alt={product.name}
+            loading="lazy"
+            width="500"
+            height="500"
+          />
         </div>
 
         <div className={Style.infoSection}>

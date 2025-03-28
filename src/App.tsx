@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import TaskPage from "./pages/TaskPage";
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
 import { Provider } from "react-redux";
 import { persistor, store } from "./state/store";
 import { PersistGate } from "redux-persist/integration/react";
@@ -8,13 +8,13 @@ import { ToastContainer } from "react-toastify";
 
 // style
 import "react-toastify/dist/ReactToastify.css";
+import DashboardLayout from "./Layout/Dashboard";
 
 // auth page
 const LoginPage = lazy(() => import("./pages/Login"));
 
 // Dashboard page
 
-const DashboardLayout = lazy(() => import("./Layout/Dashboard"));
 const ProductPage = lazy(() => import("./pages/Product"));
 const DetailProductPage = lazy(() => import("./pages/ProductDetail"));
 const ChartPage = lazy(() => import("./pages/Cart"));
@@ -24,15 +24,47 @@ const router = createBrowserRouter([
     path: "/",
     element: <DashboardLayout />,
     children: [
-      { path: "/", element: <TaskPage /> },
-      { path: "/products", element: <ProductPage /> },
-      { path: "/products/:id", element: <DetailProductPage /> },
-      { path: "/cart", element: <ChartPage /> },
+      {
+        path: "/",
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <TaskPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/products",
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <ProductPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/products/:id",
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <DetailProductPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/cart",
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <ChartPage />
+          </Suspense>
+        ),
+      },
     ],
   },
   {
     path: "/login",
-    element: <LoginPage />,
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <LoginPage />
+      </Suspense>
+    ),
   },
 ]);
 

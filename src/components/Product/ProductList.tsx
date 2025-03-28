@@ -23,6 +23,9 @@ const ProductList = ({ products, addToCart }: ProductListProps) => {
             src={product.image}
             alt={product.name}
             className={Style.productImage}
+            loading="lazy"
+            width="300"
+            height="300"
           />
           <div className={Style.productContent}>
             <h3>{product.name}</h3>
