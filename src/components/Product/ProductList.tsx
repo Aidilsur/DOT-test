@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Product } from "../../data/dummyProduct";
-import Style from "../../Style/productPage.module.css";
+import Style from "../../style/productPage.module.css";
 import { showToast } from "../../utils/toast";
 import Button from "../Button";
 

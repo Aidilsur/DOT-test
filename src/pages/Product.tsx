@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import Style from "../Style/productPage.module.css";
+import Style from "../style/productPage.module.css";
 import ProductList from "../components/Product/ProductList";
 import { products } from "../data/dummyProduct";
 import { addToCart } from "../state/cartSlice";
